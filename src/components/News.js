@@ -8,7 +8,7 @@ function News(props) {
 
   return (
     <div>
-      <h1 className="head__text">News App 📰</h1>
+      <h1 className="head__text">THE API NEWSPAPER</h1>
       <div className="all__news">
         {data
           ? data.articles.results.map((news) => (

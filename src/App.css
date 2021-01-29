@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'Chomsky';
+  src: local('Alex'), url(../src/dist/Chomsky.otf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Heathergreen';
+  src: local('Alex'),
+    url(../src/heathergreen/Heathergreen.otf) format('truetype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -5,55 +18,82 @@
 }
 
 body {
-  width: 80%;
-  margin: 0 auto;
+  /* width: 70%; */
+  margin: 0 10%;
+}
+
+.all__news {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin: 30px auto; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.news {
+  max-width: 500px;
+  padding: 30px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 10px 10px;
+  /* position: relative; */
 }
 
 .head__text {
   margin-top: 30px;
-}
-
-.all__news {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  margin: 30px auto;
-}
-
-.news {
-  max-width: 33.3vw;
-  padding: 30px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
+  justify-content: center;
+  display: flex;
+  font-family: Heathergreen;
+  font-size: 90px;
+  letter-spacing: 10px;
 }
 
 @media (max-width: 768px) {
-  .all_news {
-    display: flex;
-    flex-direction: column;
+  body {
+    width: 100%;
+  }
+  .all__news {
+    display: grid !important;
+    grid-template-columns: repeat(1, 1fr);
+    column-count: 1;
+    width: 100vw;
   }
   .news {
-    width: 100vw;
+    min-width: 90vw;
+    margin: 10px auto;
     padding: 10px;
-    border: 1px solid grey;
-    border-radius: 5px;
   }
+}
+
+.news__data {
+  margin-bottom: 10px;
 }
 
 .news__title {
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
   font-size: 20px;
+  text-align: center;
 }
 
 .news__description {
   padding: 10px;
   line-height: 20px;
   font-size: 16px;
-  max-height: 350px;
-  background-color: lightgray;
+  height: 350px;
+  background-color: rgb(255, 247, 247);
   margin: 10px 0;
   overflow: auto;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+.news__info {
+  /* position: absolute; */
+  /* bottom: 5; */
 }
 
 .news__author,
