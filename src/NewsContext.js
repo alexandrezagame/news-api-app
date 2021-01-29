@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import dotenv from 'dotenv';
 
 // (function () {
 //   var cors_api_host = 'cors-anywhere.herokuapp.com';
@@ -20,12 +21,12 @@ import axios from 'axios';
 //     return open.apply(this, args);
 //   };
 // })();
-
+dotenv.config();
 export const NewsContext = createContext();
 
 export const NewsContextProvider = (props) => {
   const [data, setData] = useState();
-  const apiKey = 'adc01baa-8b0c-4a61-921e-f87649950321';
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     axios
@@ -34,7 +35,7 @@ export const NewsContextProvider = (props) => {
       )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
-  }, []);
+  }, [apiKey]);
 
   return (
     <NewsContext.Provider value={{ data }}>
