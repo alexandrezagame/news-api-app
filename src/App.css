@@ -18,8 +18,15 @@
 }
 
 .paper__title {
-  margin: 0 10%;
+  margin: 0 7%;
   border-bottom: 1px solid black;
+}
+
+.header__part {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: white;
 }
 
 .news__part {
@@ -37,7 +44,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 10%;
+  margin: 0 7%;
   padding: 10px;
   border-bottom: 1px solid black;
 }
