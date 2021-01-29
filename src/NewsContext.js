@@ -24,17 +24,17 @@ import axios from 'axios';
 export const NewsContext = createContext();
 
 export const NewsContextProvider = (props) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const apiKey = 'adc01baa-8b0c-4a61-921e-f87649950321';
 
   useEffect(() => {
     axios
       .get(
-        `https://www.newsapi.ai/api/v1/article/getArticles?query=%7B%22%24query%22%3A%7B%22lang%22%3A%22eng%22%7D%7D&dataType=news&resultType=articles&articlesSortBy=date&articlesCount=100&articleBodyLen=-1&includeConceptImage=true&includeSourceDescription=true&apiKey=${apiKey}`
+        `https://www.newsapi.ai/api/v1/article/getArticles?query=%7B%22%24query%22%3A%7B%22lang%22%3A%22eng%22%7D%7D&dataType=news&resultType=articles&articlesSortBy=date&articlesCount=10&articleBodyLen=-1&includeConceptImage=true&includeSourceDescription=true&apiKey=${apiKey}`
       )
       .then((response) => setData(response.data))
       .catch((error) => console.log(error));
-  }, [data]);
+  }, []);
 
   return (
     <NewsContext.Provider value={{ data }}>
