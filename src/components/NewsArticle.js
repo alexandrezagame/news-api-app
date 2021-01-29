@@ -14,6 +14,9 @@ const NewsArticle = ({ data }) => {
           </a>
         </span>
       </div>
+      {/* <div className="news__image"> */}
+      <img src={data?.image} alt={data.title} />
+      {/* </div> */}
       <div className="news__info">
         <p className="news__description">{data.body}</p>
       </div>
