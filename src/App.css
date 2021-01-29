@@ -10,27 +10,48 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  /* width: 70%; */
+.paper__title {
   margin: 0 10%;
+  border-bottom: 1px solid black;
+}
+
+.news__part {
+  display: flex;
+}
+
+.head__text {
+  text-align: center;
+  font-family: 'Chomsky';
+  font-size: 90px;
+  letter-spacing: 10px;
+}
+
+.owner__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 10%;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.owner__info a {
+  text-decoration: none;
+  color: black;
 }
 
 .all__news {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  margin: 30px auto; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr auto;
   height: 100vh;
+  margin: 0 auto !important;
 }
 
 .news {
@@ -39,32 +60,30 @@ body {
   border: 1px solid lightgray;
   border-radius: 5px;
   margin: 10px 10px;
-  /* position: relative; */
-}
-
-.head__text {
-  margin-top: 30px;
-  justify-content: center;
-  display: flex;
-  font-family: Heathergreen;
-  font-size: 90px;
-  letter-spacing: 10px;
 }
 
 @media (max-width: 768px) {
-  body {
-    width: 100%;
+  .head__text {
+    font-size: 2rem;
+    letter-spacing: 5px;
   }
   .all__news {
-    display: grid !important;
-    grid-template-columns: repeat(1, 1fr);
-    column-count: 1;
-    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    columns: 1;
+    margin: 0 auto !important;
+  }
+  .owner__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* margin: 0 10%; */
+    font-size: 8px;
   }
   .news {
-    min-width: 90vw;
-    margin: 10px auto;
-    padding: 10px;
+    max-width: 75vw;
+    margin: 10px !important;
+    padding: 5px;
   }
 }
 
@@ -75,8 +94,10 @@ body {
 .news__title {
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
+  margin-bottom: 10px;
   font-size: 20px;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .news__description {
@@ -84,16 +105,12 @@ body {
   line-height: 20px;
   font-size: 16px;
   height: 350px;
-  background-color: rgb(255, 247, 247);
+  text-align: justify;
+  background-color: rgb(253, 253, 253);
   margin: 10px 0;
   overflow: auto;
   font-family: 'Montserrat', sans-serif;
   color: black;
-}
-
-.news__info {
-  /* position: absolute; */
-  /* bottom: 5; */
 }
 
 .news__author,
