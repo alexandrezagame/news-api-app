@@ -24,6 +24,7 @@ function News(props) {
             href="https://www.alexzagame.com/"
             alt="Alex Zagame portfolio"
             target="_blank"
+            rel="noopener noreferrer"
           >
             By Alex Zagame
           </a>
