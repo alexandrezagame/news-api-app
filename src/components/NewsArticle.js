@@ -9,8 +9,12 @@ const NewsArticle = ({ data }) => {
 
         <br></br>
         <span className="news__source">
-          {/* eslint-disable-next-line */}
-          <a href={data.url} alt="news source website" target="_blank">
+          <a
+            href={data.url}
+            alt="news source website"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Source: "{data.source.title}"
           </a>
         </span>
