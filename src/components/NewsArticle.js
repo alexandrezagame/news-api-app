@@ -1,6 +1,11 @@
 import React from 'react';
 
 const NewsArticle = ({ data }) => {
+  const handleImageError = (e) => {
+    e.target.src =
+      'https://images.unsplash.com/photo-1565453006698-a17d83b9e2af?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bmV3c3BhcGVyfGVufDB8MHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60';
+  };
+
   return (
     <div className="news">
       <div className="news__data">
@@ -19,13 +24,8 @@ const NewsArticle = ({ data }) => {
           </a>
         </span>
       </div>
-      {data.image ? (
-        <img src={data?.image} alt={data.title} />
-      ) : (
-        <img
-          src="https://images.unsplash.com/photo-1565453006698-a17d83b9e2af?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bmV3c3BhcGVyfGVufDB8MHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-          alt="newspaper"
-        />
+      {data.image && (
+        <img src={data?.image} alt={data.title} onError={handleImageError} />
       )}
 
       <div className="news__info">
